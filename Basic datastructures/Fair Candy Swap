@@ -1,0 +1,33 @@
+Leetcode problem link: https://leetcode.com/problems/fair-candy-swap/
+
+Solution:
+
+class Solution {
+public:
+    vector<int> fairCandySwap(vector<int>& A, vector<int>& B) {
+        int sum_A=0;
+        int sum_B=0;
+        for(auto a:A){
+            sum_A+=a;
+        }
+        for(auto b:B){
+            sum_B+=b;
+        }
+        int tot=(sum_A+sum_B)/2;
+        unordered_set<int> un_set;
+        for(auto b:B) {
+            un_set.insert(b);
+        }
+        vector<int> out;
+        for(auto a:A) {
+            int get = tot - sum_A +a;
+            if(un_set.find(get)!=un_set.end()) {
+                out.push_back(a);
+                out.push_back(get);
+                break;
+            }
+            
+        }
+        return out; 
+    }
+};
