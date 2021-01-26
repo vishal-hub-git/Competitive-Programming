@@ -1,0 +1,17 @@
+Leetcode problem link: https://leetcode.com/problems/running-sum-of-1d-array/
+
+Solution:
+
+class Solution {
+public:
+    vector<int> runningSum(vector<int>& nums) {
+        int n=nums.size();
+        vector<int> sum(n);
+        int sum1=0;
+        for(int i=0;i<n;i++){
+            sum1+=nums[i];
+            sum[i]=sum1;
+        }
+        return sum;
+    }
+};
