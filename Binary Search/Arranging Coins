@@ -1,0 +1,13 @@
+Leetcode problem link: https://leetcode.com/problems/arranging-coins/
+
+Solution:
+
+#include <iostream>
+#include <cmath>
+class Solution {
+public:
+    int arrangeCoins(int n) {
+       double determinant = sqrt((1 + (4*2*(double)n)));
+       return (-1 + determinant)/2;
+    }
+};
