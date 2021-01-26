@@ -1,0 +1,22 @@
+Leetcode problem link: https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
+
+Solution:
+
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        int max=*max_element(candies.begin(),candies.end());
+        vector<bool> bool1(candies.size()); 
+        for(int i=0;i<candies.size();i++){
+            if(extraCandies+candies[i]>=max){
+                bool1[i]=true;
+            }
+            else{
+                bool1[i]=false;
+            }
+        }
+        return bool1;
+    }
+};
