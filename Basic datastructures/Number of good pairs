@@ -1,0 +1,21 @@
+Leetcode problem link: https://leetcode.com/problems/number-of-good-pairs/
+
+Solution:
+
+class Solution {
+public:
+    int numIdenticalPairs(vector<int>& nums) {
+        unordered_set<int> num_set(nums.begin(),nums.end());
+        int c=0,i,j;
+        for(i=0;i<nums.size();i++){
+            if(nums[i]!=-100){
+            for(j=i+1;j<nums.size();j++){
+                if(nums[i]==nums[j]){
+                    c++;
+                }
+            }
+        }
+    }
+        return c;
+    }
+};
