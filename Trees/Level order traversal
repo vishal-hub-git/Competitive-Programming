@@ -1,0 +1,31 @@
+Geeksforgeeks problem link: https://practice.geeksforgeeks.org/problems/level-order-traversal-line-by-line/1
+
+Solution:
+
+vector<vector<int>> levelOrder(Node* node)
+{
+    vector<vector<int>> vect;
+    queue<Node*> qu;
+    qu.push(node);
+    
+    while(qu.empty()==0)
+    {
+        int s = qu.size();
+        vector<int> v;
+        while(s--)
+        {   
+            Node* node1;
+            node1=qu.front();
+            v.push_back(node1->data);
+    
+            if(node1->left!=NULL)
+                qu.push(node1->left);
+            if(node1->right!=NULL)
+                qu.push(node1->right);
+            if(qu.empty()==0)
+                qu.pop();
+        }
+        vect.push_back(v);
+    }
+    return vect;
+}
