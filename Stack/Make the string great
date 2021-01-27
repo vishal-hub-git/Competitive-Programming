@@ -1,0 +1,25 @@
+Leetcode problem link: https://leetcode.com/problems/make-the-string-great/
+
+Solution:
+
+class Solution {
+public:
+    string makeGood(string s) {
+        stack<char> st;
+        for(auto c:s){
+            if(!st.empty() && abs(st.top()-c)==32){
+                st.pop();
+            }
+            else{
+                st.push(c);
+            }
+        }
+        s="";
+        while (!st.empty())
+        {
+            s=st.top()+s;
+            st.pop();
+        }
+        return s;
+    }
+};
