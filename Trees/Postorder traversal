@@ -1,0 +1,18 @@
+Geeksforgeeks problem link: https://practice.geeksforgeeks.org/problems/postorder-traversal/1
+
+Solution:
+
+void traversal(Node* root,vector<int> &vect){
+    if(root==NULL){
+        return;
+    }
+    traversal(root->left,vect);
+    traversal(root->right,vect);
+    vect.push_back(root->data);
+}
+vector <int> postOrder(Node* root)
+{
+    vector<int> vect;
+    traversal(root,vect);
+    return vect;
+}
