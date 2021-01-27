@@ -1,0 +1,17 @@
+Geeksforgeeks problem link: https://practice.geeksforgeeks.org/problems/sum-tree/1
+
+Solution:
+
+int sum(Node *root)
+{
+    if(root==NULL) 
+        return 0;
+    return (root->data+sum(root->left)+sum(root->right));
+}
+bool isSumTree(Node* root)
+{
+    if(sum(root->left)+sum(root->right)==root->data){
+        return 1;
+    }
+    return 0;
+}
