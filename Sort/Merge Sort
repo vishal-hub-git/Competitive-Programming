@@ -1,0 +1,29 @@
+Geeksforgeeks problem link: https://practice.geeksforgeeks.org/problems/merge-sort/1
+
+Solution:
+
+void merge(int arr[], int l, int m, int r)
+{
+     int i=l,j=m+1,k=0;
+     int n1=m-l+1;
+     int n2=r-m;
+     int arr1[n1+n2];
+     while(i<=m && j<=r){
+        if(arr[i]<arr[j]){
+            arr1[k++]=arr[i++];
+        }
+        else{
+            arr1[k++]=arr[j++];
+        }
+     }
+     while(i<=m){
+        arr1[k++]=arr[i++];
+     }
+     while(j<=r){
+        arr1[k++]=arr[j++];
+     }
+     int q=l;
+     for(auto p:arr1){
+         arr[q++]=p;
+     }
+}
