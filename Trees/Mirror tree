@@ -1,0 +1,13 @@
+Geeksforgeeks problem link: https://practice.geeksforgeeks.org/problems/mirror-tree/1/
+
+Solution:
+
+void mirror(Node* node) 
+{
+    if(node==NULL)
+        return ;
+     mirror(node->right);
+     mirror(node->left);
+     swap(node->right,node->left);
+    
+}
