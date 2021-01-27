@@ -1,0 +1,25 @@
+Leetcode problem link: https://leetcode.com/problems/next-greater-element-i/
+
+Solution:
+
+class Solution {
+public:
+    vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> vect(nums2.size(),-1);
+        stack<int> st;
+        vector<int> vect2;
+        for(int i=0;i<nums2.size();i++){
+            while(!st.empty() && nums2[st.top()]<nums2[i]){
+                vect[st.top()]=nums2[i];
+                st.pop();
+            }
+            st.push(i);
+            }
+        for(int i=0;i<nums1.size();i++){
+            auto ind=find(nums2.begin(),nums2.end(),nums1[i]);
+            int ind1=ind-nums2.begin();
+            vect2.insert(vect2.begin()+i,vect[ind1]);
+        }
+        return vect2;
+    }
+};
