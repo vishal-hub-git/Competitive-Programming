@@ -1,0 +1,24 @@
+Geeksforgeeks problem link: https://practice.geeksforgeeks.org/problems/find-k-th-smallest-element-in-bst/1/
+
+Solution:
+
+void traversal(Node *root,vector<int> &vect){
+     if (root == NULL) 
+        return; 
+  
+    traversal(root->left,vect); 
+  
+    vect.push_back(root->data);
+  
+    traversal(root->right,vect);
+}
+// Return the Kth smallest element in the given BST 
+int KthSmallestElement(Node *root, int K)
+{
+     vector<int> vect;
+     traversal(root,vect);
+     if(K>vect.size()){
+         return -1;
+     }
+     return vect[K-1];
+}
