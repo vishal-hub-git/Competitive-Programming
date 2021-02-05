@@ -1,0 +1,12 @@
+Geeksforgeeks link problem link: https://practice.geeksforgeeks.org/problems/minimum-element-in-bst/1/?category[]=Binary%20Search%20Tree&category[]=Binary%20Search%20Tree&page=1&query=category[]Binary%20Search%20Treepage1category[]Binary%20Search%20Tree
+
+Solution:
+
+int minValue(Node* root)
+{
+    if(root->left==NULL){
+        return root->data;
+    }
+    int m=minValue(root->left);
+    return m;
+}
