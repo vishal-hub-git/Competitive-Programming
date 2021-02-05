@@ -1,0 +1,14 @@
+Geeksforgeeks problem link: https://practice.geeksforgeeks.org/problems/check-for-bst/1/?category[]=Binary%20Search%20Tree&category[]=Binary%20Search%20Tree&page=2&query=category[]Binary%20Search%20Treepage2category[]Binary%20Search%20Tree
+
+Solution:
+
+bool isBST(Node* root) {
+    vector<int> vect;
+    inorder(root,vect);
+    for(int i=0;i<vect.size()-1;i++){
+        if(vect[i]>=vect[i+1]){
+            return false;
+        }
+    }
+    return true;
+}
