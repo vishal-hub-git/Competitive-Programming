@@ -1,0 +1,22 @@
+Geeksforgeeks problem link: https://practice.geeksforgeeks.org/problems/is-binary-tree-heap/1/
+
+Solution:
+
+bool isHeap(Node * tree)
+{
+    bool c=true;
+    if(tree==NULL || (tree->left==NULL && tree->right==NULL)){
+        return c;
+    }
+    if(tree->left!=NULL && tree->left->data>tree->data){
+        c=false;
+        return c;
+    }
+    if(tree->right!=NULL && tree->right->data>tree->data){
+        c=false;
+        return c;
+    }
+    c=isHeap(tree->left);
+    c=isHeap(tree->right);
+    return c;
+}
