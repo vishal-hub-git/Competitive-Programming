@@ -1,0 +1,19 @@
+Geeks for Geeks problem link: https://practice.geeksforgeeks.org/problems/nth-catalan-number0817/1
+
+Solution:
+
+class Solution
+{
+    public:
+    //Function to find the nth catalan number.
+    cpp_int findCatalan(int n)
+    {
+        vector<cpp_int> val;
+        val.push_back(1);
+        val.push_back(1);
+        for(int i=2;i<=2*n;i++){
+            val.push_back(val.at(i-1)*i);
+        }
+        return (val.at(2*n)/(val.at(n+1)*val.at(n)));
+    }
+};
